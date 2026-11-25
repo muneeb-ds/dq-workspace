@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "apps": [
+    {
+      "id": "gitlab",
+      "name": "GitLab",
+      "url": "https://010.taild6271e.ts.net",
+      "hosts": ["010.taild6271e.ts.net"],
+      "icon": "auto",
+      "badge": {
+        "from": "api",
+        "path": "/api/v4/todos?state=pending&per_page=1",
+        "header": "x-total"
+      },
+      "network": "tailscale",
+      "notifications": true
+    },
+    {
+      "id": "plane",
+      "name": "Plane",
+      "url": "https://tasks.taild6271e.ts.net",
+      "hosts": ["tasks.taild6271e.ts.net"],
+      "icon": "auto",
+      "badge": { "from": "title" },
+      "network": "tailscale",
+      "notifications": true
+    },
+    {
+      "id": "gchat",
+      "name": "Google Chat",
+      "url": "https://chat.google.com",
+      "hosts": ["chat.google.com"],
+      "authHosts": [
+        "accounts.google.com",
+        "accounts.youtube.com",
+        "www.google.com",
+        "mail.google.com",
+        "myaccount.google.com",
+        "workspace.google.com"
+      ],
+      "icon": "auto",
+      "badge": { "from": "title" },
+      "permissions": ["media", "notifications", "clipboard-sanitized-write", "fullscreen"],
+      "notifications": true
+    }
+  ]
+}

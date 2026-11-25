@@ -1,0 +1,42 @@
+/* DataQuartz brand tokens. Dark is the default; add class "dq-light" to <html> for the light variant. */
+@font-face{font-family:"Outfit";font-weight:200;font-display:swap;src:url(fonts/outfit-200.woff2) format("woff2")}
+@font-face{font-family:"Outfit";font-weight:300;font-display:swap;src:url(fonts/outfit-300.woff2) format("woff2")}
+@font-face{font-family:"Outfit";font-weight:400;font-display:swap;src:url(fonts/outfit-400.woff2) format("woff2")}
+@font-face{font-family:"Outfit";font-weight:500;font-display:swap;src:url(fonts/outfit-500.woff2) format("woff2")}
+@font-face{font-family:"Outfit";font-weight:600;font-display:swap;src:url(fonts/outfit-600.woff2) format("woff2")}
+:root{
+  --bg:#000000;          /* page */
+  --panel:#0b0d0f;       /* cards, figures */
+  --ink:#ffffff;         /* headings, emphasis */
+  --text:#c9cbcd;        /* body */
+  --muted:#7d838a;       /* captions, labels */
+  --line:#1f2428;        /* rules, borders */
+  --accent:#5bbac6;      /* teal: text and graphics */
+  --accent-fill:#5bbac6; /* teal for large fills and chart marks */
+  --accent-dim:#3d6f78;  /* secondary teal: rules, tagline tail */
+  --accent-wash:rgba(91,186,198,.08);
+  --font:"Outfit","Avenir Next","Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+html.dq-light{
+  --bg:#ffffff;
+  --panel:#f3f5f6;
+  --ink:#0b0d0f;
+  --text:#3d4448;
+  --muted:#6b7278;
+  --line:#e1e5e7;
+  --accent:#1f7d89;      /* deeper teal so text passes contrast on white */
+  --accent-fill:#5bbac6;
+  --accent-dim:#9fcfd6;
+  --accent-wash:rgba(91,186,198,.12);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font:300 16.5px/1.65 var(--font);-webkit-font-smoothing:antialiased;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+h1,h2,h3,h4{color:var(--ink);font-weight:300;text-wrap:balance;margin:0;line-height:1.15}
+p{margin:0}
+b,strong{color:var(--ink);font-weight:500}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.accent{color:var(--accent)}

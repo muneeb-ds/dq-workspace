@@ -1,0 +1,59 @@
+{
+  "name": "dq-workspace",
+  "productName": "DQ Workspace",
+  "version": "0.1.0",
+  "description": "DataQuartz work tools in one Mac app: GitLab, Plane, Google Chat and more.",
+  "author": "DataQuartz",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "check": "node --check src/main/main.js && node --check src/main/config.js && node --check src/preload/app.js && node --check src/preload/shell.js && node --check src/shell/shell.js",
+    "build:mac": "electron-builder --mac zip dmg --arm64 --x64 --publish never",
+    "build:mac-zip": "electron-builder --mac zip --arm64 --x64 --publish never"
+  },
+  "devDependencies": {
+    "electron": "45.5.0",
+    "electron-builder": "26.18.0"
+  },
+  "build": {
+    "appId": "com.dataquartz.workspace",
+    "productName": "DQ Workspace",
+    "copyright": "DataQuartz",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "config/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "build/icon.icns",
+      "target": [
+        "zip",
+        "dmg"
+      ],
+      "darkModeSupport": true,
+      "extendInfo": {
+        "NSCameraUsageDescription": "Google Chat uses the camera for calls.",
+        "NSMicrophoneUsageDescription": "Google Chat uses the microphone for calls."
+      }
+    },
+    "protocols": [
+      {
+        "name": "DQ Workspace",
+        "schemes": [
+          "dqws"
+        ]
+      }
+    ],
+    "dmg": {
+      "title": "DQ Workspace"
+    },
+    "publish": []
+  }
+}
